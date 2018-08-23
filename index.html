@@ -1,8 +1,70 @@
 <html>
     <head>
         <title>Jogo da velha em javascript</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     </head>
+        <style>
+            .center {
+                text-align: center;
+            }
+            .flex {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 100px);
+                grid-template-rows: repeat(3, 100px);
+                align-self: center; 
+            }
+            .item {
+                padding: 10px;
+                border-bottom: 1px solid black;
+                border-right: 1px solid black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+            .item:last-child, .item:nth-last-child(2), .item:nth-last-child(3) {
+                border-bottom: none;
+            }
+            .item:nth-child(3), .item:nth-child(6), .item:nth-child(9) {
+                border-right: none;
+            }
+            i {
+                font-size: 30px;
+            }
+        </style>
+        <script>
+            let className = "";
+            const marcaCelula = (item) => {
+                if (!item.disabled) {
+                    item.disabled = true;
+                    if (!className || className !== "fas fa-times") {
+                        item.firstChild.className = className = "fas fa-times";
+                    } else {
+                        item.firstChild.className = className = "far fa-circle";
+                    }
+                }
+            };
+        </script>
     <body>
-        <h1>Bem vindo ao jogo da velha top!</h1>
+        <h1 class='center'>Bem vindo ao jogo da velha top!</h1>
+        <div class="flex">
+            <div class='container'>
+                <div class='item' onclick="marcaCelula(this)"><i></i></div>
+                <div class='item' onclick="marcaCelula(this)"><i></i></div>
+                <div class='item' onclick="marcaCelula(this)"><i></i></div>
+                <div class='item' onclick="marcaCelula(this)"><i></i></div>
+                <div class="item" onclick="marcaCelula(this)"><i></i></div>
+                <div class='item' onclick="marcaCelula(this)"><i></i></div>
+                <div class='item' onclick="marcaCelula(this)"><i></i></div>
+                <div class='item' onclick="marcaCelula(this)"><i></i></div>
+                <div class='item' onclick="marcaCelula(this)"><i></i></div>
+            </div>
+        </div>
+
     </body>
 </html>
