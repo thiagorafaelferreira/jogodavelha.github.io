@@ -49,6 +49,13 @@
                     }
                 }
             };
+            const limpaCelulas = () => {
+                const children = document.querySelector('[class="container"]').children;
+                Array.from(children).forEach(child => {
+                    child.firstChild.className = className = "";
+                    child.disabled = false;
+                });
+            };
         </script>
     <body>
         <h1 class='center'>Bem vindo ao jogo da velha top!</h1>
@@ -65,6 +72,8 @@
                 <div class='item' onclick="marcaCelula(this)"><i></i></div>
             </div>
         </div>
-
+        <div class="center">
+            <button onclick="limpaCelulas()">Limpar</button>
+        </div>
     </body>
 </html>
