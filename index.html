@@ -7,6 +7,9 @@
             .center {
                 text-align: center;
             }
+            .mb {
+                margin-bottom: 30px;
+            }
             .flex {
                 display: flex;
                 align-items: center;
@@ -44,6 +47,7 @@
                     item.disabled = true;
                     if (!className || className !== "fas fa-times") {
                         item.firstChild.className = className = "fas fa-times";
+                        item.firstChild.style.color = "blue";
                     } else {
                         item.firstChild.className = className = "far fa-circle";
                     }
@@ -56,10 +60,13 @@
                     child.disabled = false;
                 });
             };
+            const validaGanhador = () => {
+
+            }
         </script>
     <body>
         <h1 class='center'>Bem vindo ao jogo da velha top!</h1>
-        <div class="flex">
+        <div class="flex mb">
             <div class='container'>
                 <div class='item' onclick="marcaCelula(this)"><i></i></div>
                 <div class='item' onclick="marcaCelula(this)"><i></i></div>
