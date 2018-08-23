@@ -57,6 +57,7 @@
                 const children = document.querySelector('[class="container"]').children;
                 Array.from(children).forEach(child => {
                     child.firstChild.className = className = "";
+                    child.firstChild.style.color = "";
                     child.disabled = false;
                 });
             };
