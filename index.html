@@ -48,10 +48,13 @@
                     if (!className || className !== "fas fa-times") {
                         item.firstChild.className = className = "fas fa-times";
                         item.firstChild.style.color = "blue";
+                        item.value = "x";
                     } else {
                         item.firstChild.className = className = "far fa-circle";
+                        item.value = "o";
                     }
                 }
+                validaGanhador();
             };
             const limpaCelulas = () => {
                 const children = document.querySelector('[class="container"]').children;
@@ -59,10 +62,37 @@
                     child.firstChild.className = className = "";
                     child.firstChild.style.color = "";
                     child.disabled = false;
+                    child.value = "";
                 });
             };
             const validaGanhador = () => {
-
+                const children = document.querySelector('[class="container"]').children;
+                ["o", "x"].forEach(player => {
+                    if (children[0].value === player && children[1].value === player && children[2].value === player ) {
+                        alert(`ganhou ${player}`);
+                    }
+                    if (children[3].value === player && children[4].value === player && children[5].value === player ) {
+                        alert(`ganhou ${player}`);
+                    }
+                    if (children[6].value === player && children[7].value === player && children[8].value === player) {
+                        alert(`ganhou ${player}`);
+                    }
+                    if (children[0].value === player && children[3].value === player && children[6].value === player ) {
+                        alert(`ganhou ${player}`);
+                    }
+                    if (children[1].value === player && children[4].value === player && children[7].value === player ) {
+                        alert(`ganhou ${player}`);
+                    }
+                    if (children[2].value === player && children[5].value === player && children[8].value === player ) {
+                        alert(`ganhou ${player}`);
+                    }
+                    if (children[0].value === player && children[4].value === player && children[8].value === player ) {
+                        alert(`ganhou ${player}`);
+                    }
+                    if (children[6].value === player && children[4].value === player && children[2].value === player ) {
+                        alert(`ganhou ${player}`);
+                    }
+                });
             };
         </script>
     <body>
